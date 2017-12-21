@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3e0c803d4ba5412a86907132f557a4ca" Name="Diagram1">
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_ac_template" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_answer_choice" Width="1.5" PointX="14.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_question" Width="1.5" PointX="10" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_question_response" Width="1.5" PointX="16.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_question_sog" Width="1.5" PointX="12.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_question_tag" Width="1.5" PointX="12.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_sq_template" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_subquestion" Width="1.5" PointX="12.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_survey" Width="1.5" PointX="7.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_survey_deployment" Width="1.5" PointX="10" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_survey_user" Width="1.5" PointX="10" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.clp_sv_visual_element" Width="1.5" PointX="10" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.deployment" Width="1.5" PointX="3" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.deployment_announcements" Width="1.5" PointX="5.25" PointY="48.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.deployment_contact" Width="1.5" PointX="5.25" PointY="51.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.deployment_criteria" Width="1.5" PointX="5.25" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.deployment_list_def" Width="1.5" PointX="5.25" PointY="53.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.deployment_mat_list" Width="1.5" PointX="5.25" PointY="56.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.deployment_recipient" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.deployment_reminder" Width="1.5" PointX="5.25" PointY="59.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.deployment_resp_crit" Width="1.5" PointX="7.5" PointY="39.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.deployment_response" Width="1.5" PointX="5.25" PointY="43.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_admin" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_course" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_course_categories" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_course_coll" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_course_coll_uid" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_data_source" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_institution_role" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_module" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_module_coll" Width="1.5" PointX="3" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_org_categories" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_org_coll_uid" Width="1.5" PointX="5.25" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_organization" Width="1.5" PointX="3" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_organization_coll" Width="1.5" PointX="3" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_system_role" Width="1.5" PointX="3" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_user" Width="1.5" PointX="3" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_user_coll" Width="1.5" PointX="3" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.domain_user_coll_uid" Width="1.5" PointX="5.25" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBLEARNModel.mi_node" Width="1.5" PointX="3" PointY="38.875" IsExpanded="true" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_ac_template_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_answer_choice_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_question_response_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_question_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_question_sog_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_question_tag_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_subquestion_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_question_response_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_survey_deployment_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_survey_user_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_visual_element_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.clp_sv_survey_deployment_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.deployment_announcements_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.deployment_contact_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.deployment_criteria_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.deployment_list_def_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.deployment_mat_list_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.deployment_reminder_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.deployment_response_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.deployment_criteria_fk6" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.deployment_resp_crit_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.deployment_resp_crit_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_admin_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_course_categories_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_course_coll_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_course_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_data_source_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_institution_role_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_module_coll_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_module_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_org_categories_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_organization_coll_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_organization_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_system_role_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_user_coll_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_user_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.mi_node_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_course_coll_uid_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_org_coll_uid_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.domain_user_coll_uid_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBLEARNModel.mi_node_fk1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

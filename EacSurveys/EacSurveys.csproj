@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E1365B5-18A7-48A9-AFCB-815DFF672F8E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EacSurveys</RootNamespace>
+    <AssemblyName>EacSurveys</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GAGoals\ExcelToBbGoals\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xml.Schema.Linq, Version=2.0.2.12, Culture=neutral, PublicKeyToken=47d0c84d0ebb13e5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GAGoals\ExcelToBbGoals\packages\CodePlex.LinqToXsd.2.0.2\lib\Xml.Schema.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clp_sv_ac_template.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_answer_choice.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_question.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_question_response.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_question_sog.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_question_tag.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_sq_template.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_subquestion.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_survey.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_survey_deployment.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_survey_user.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clp_sv_visual_element.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deployment.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deployment_announcements.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deployment_contact.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deployment_criteria.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deployment_list_def.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deployment_mat_list.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deployment_recipient.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deployment_reminder.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deployment_response.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deployment_resp_crit.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_admin.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_course.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_course_categories.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_course_coll.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_course_coll_uid.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_data_source.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_institution_role.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_module.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_module_coll.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_organization.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_organization_coll.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_org_categories.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_org_coll_uid.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_system_role.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_user.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_user_coll.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="domain_user_coll_uid.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mi_node.cs">
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="survey.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>survey.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="survey.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>survey.tt</DependentUpon>
+    </Compile>
+    <Compile Include="survey.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>survey.edmx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="survey.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>survey.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="survey.edmx.diagram">
+      <DependentUpon>survey.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\clientData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="survey.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>survey.edmx</DependentUpon>
+      <LastGenOutput>survey.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="survey.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>survey.edmx</DependentUpon>
+      <LastGenOutput>survey.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\QTIUtility\LINQtoXSDLib\LINQtoXSDLib\LINQtoXSDLib.csproj">
+      <Project>{260de95f-a945-469f-a79c-38eed50f6171}</Project>
+      <Name>LINQtoXSDLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\QTIUtility\QTIUtility\QTIUtility.csproj">
+      <Project>{56499d73-333b-4667-a123-d44d180429c4}</Project>
+      <Name>QTIUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BbSurveysRoutines\BbSurveysRoutines.csproj">
+      <Project>{e9bd903f-8745-4517-95e9-389b5586b884}</Project>
+      <Name>BbSurveysRoutines</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
