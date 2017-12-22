@@ -48,6 +48,12 @@
             this.bsSurv = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pn1 = new System.Windows.Forms.Panel();
+            this.pnLogin = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbUser_id = new System.Windows.Forms.TextBox();
+            this.lbPassWord = new System.Windows.Forms.Label();
+            this.lbUser = new System.Windows.Forms.Label();
             this.lbDone = new System.Windows.Forms.Label();
             this.pb2 = new System.Windows.Forms.ProgressBar();
             this.pb1 = new System.Windows.Forms.ProgressBar();
@@ -60,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.survGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSurv)).BeginInit();
             this.pn1.SuspendLayout();
+            this.pnLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsDetails)).BeginInit();
             this.SuspendLayout();
             // 
@@ -232,6 +239,7 @@
             // pn1
             // 
             this.pn1.AutoSize = true;
+            this.pn1.Controls.Add(this.pnLogin);
             this.pn1.Controls.Add(this.lbDone);
             this.pn1.Controls.Add(this.pb2);
             this.pn1.Controls.Add(this.pb1);
@@ -243,6 +251,73 @@
             this.pn1.Padding = new System.Windows.Forms.Padding(20);
             this.pn1.Size = new System.Drawing.Size(2007, 1624);
             this.pn1.TabIndex = 7;
+            // 
+            // pnLogin
+            // 
+            this.pnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(170)))));
+            this.pnLogin.Controls.Add(this.btnLogin);
+            this.pnLogin.Controls.Add(this.tbPassword);
+            this.pnLogin.Controls.Add(this.tbUser_id);
+            this.pnLogin.Controls.Add(this.lbPassWord);
+            this.pnLogin.Controls.Add(this.lbUser);
+            this.pnLogin.Location = new System.Drawing.Point(1233, 92);
+            this.pnLogin.Name = "pnLogin";
+            this.pnLogin.Size = new System.Drawing.Size(699, 154);
+            this.pnLogin.TabIndex = 14;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.AutoSize = true;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(105)))), ((int)(((byte)(170)))));
+            this.btnLogin.Location = new System.Drawing.Point(594, 86);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(94, 46);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.Location = new System.Drawing.Point(227, 90);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(335, 35);
+            this.tbPassword.TabIndex = 3;
+            this.tbPassword.UseSystemPasswordChar = true;
+            this.tbPassword.WordWrap = false;
+            // 
+            // tbUser_id
+            // 
+            this.tbUser_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUser_id.Location = new System.Drawing.Point(227, 36);
+            this.tbUser_id.Name = "tbUser_id";
+            this.tbUser_id.Size = new System.Drawing.Size(335, 35);
+            this.tbUser_id.TabIndex = 2;
+            this.tbUser_id.WordWrap = false;
+            // 
+            // lbPassWord
+            // 
+            this.lbPassWord.AutoSize = true;
+            this.lbPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPassWord.ForeColor = System.Drawing.Color.White;
+            this.lbPassWord.Location = new System.Drawing.Point(32, 84);
+            this.lbPassWord.Name = "lbPassWord";
+            this.lbPassWord.Size = new System.Drawing.Size(120, 29);
+            this.lbPassWord.TabIndex = 1;
+            this.lbPassWord.Text = "Password";
+            // 
+            // lbUser
+            // 
+            this.lbUser.AutoSize = true;
+            this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUser.ForeColor = System.Drawing.Color.White;
+            this.lbUser.Location = new System.Drawing.Point(32, 36);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(124, 29);
+            this.lbUser.TabIndex = 0;
+            this.lbUser.Text = "Username";
             // 
             // lbDone
             // 
@@ -299,12 +374,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Eac Enterprise Surveys";
+            this.Text = "Eac Enterprise Surveys Reports";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.survGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSurv)).EndInit();
             this.pn1.ResumeLayout(false);
             this.pn1.PerformLayout();
+            this.pnLogin.ResumeLayout(false);
+            this.pnLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -339,6 +416,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cpk1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Panel pnLogin;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox tbUser_id;
+        private System.Windows.Forms.Label lbPassWord;
+        private System.Windows.Forms.Label lbUser;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
 

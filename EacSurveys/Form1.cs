@@ -1,23 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Timers;
-using System.Threading;
-using System.Collections;
 using System.IO;
-using System.IO.Compression;
 using QTIUtility;
 using tempuri.org.Clients.xsd;
 using System.Xml.Linq;
-using LINQtoXSDLib;
-using DocumentFormat.OpenXml.Wordprocessing;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace EacSurveys
