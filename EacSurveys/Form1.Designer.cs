@@ -75,7 +75,7 @@
             this.lbox2.FormattingEnabled = true;
             this.lbox2.Location = new System.Drawing.Point(119, 92);
             this.lbox2.Name = "lbox2";
-            this.lbox2.Size = new System.Drawing.Size(1051, 33);
+            this.lbox2.Size = new System.Drawing.Size(1057, 33);
             this.lbox2.TabIndex = 1;
             // 
             // btnGetSurvey
@@ -131,7 +131,7 @@
             this.survGrid.Name = "survGrid";
             this.survGrid.RowTemplate.Height = 33;
             this.survGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.survGrid.Size = new System.Drawing.Size(1813, 849);
+            this.survGrid.Size = new System.Drawing.Size(1941, 849);
             this.survGrid.TabIndex = 5;
             this.survGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.survGrid_CellClick);
             this.survGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.survGrid_CellDoubleClick);
@@ -230,15 +230,14 @@
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1602);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1574);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(2007, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(2135, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // pn1
             // 
-            this.pn1.AutoSize = true;
             this.pn1.Controls.Add(this.pnLogin);
             this.pn1.Controls.Add(this.lbDone);
             this.pn1.Controls.Add(this.pb2);
@@ -248,8 +247,8 @@
             this.pn1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn1.Location = new System.Drawing.Point(0, 0);
             this.pn1.Name = "pn1";
-            this.pn1.Padding = new System.Windows.Forms.Padding(20);
-            this.pn1.Size = new System.Drawing.Size(2007, 1624);
+            this.pn1.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.pn1.Size = new System.Drawing.Size(2135, 1596);
             this.pn1.TabIndex = 7;
             // 
             // pnLogin
@@ -262,7 +261,7 @@
             this.pnLogin.Controls.Add(this.lbUser);
             this.pnLogin.Location = new System.Drawing.Point(1233, 92);
             this.pnLogin.Name = "pnLogin";
-            this.pnLogin.Size = new System.Drawing.Size(699, 154);
+            this.pnLogin.Size = new System.Drawing.Size(781, 154);
             this.pnLogin.TabIndex = 14;
             // 
             // btnLogin
@@ -321,9 +320,10 @@
             // 
             // lbDone
             // 
+            this.lbDone.AutoSize = true;
             this.lbDone.Location = new System.Drawing.Point(114, 1360);
             this.lbDone.Name = "lbDone";
-            this.lbDone.Size = new System.Drawing.Size(199, 45);
+            this.lbDone.Size = new System.Drawing.Size(26, 25);
             this.lbDone.TabIndex = 13;
             this.lbDone.Text = "()";
             // 
@@ -362,15 +362,16 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2007, 1624);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(2135, 1596);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toDate);
             this.Controls.Add(this.fromDate);
             this.Controls.Add(this.btnGetSurvey);
             this.Controls.Add(this.lbox2);
             this.Controls.Add(this.pn1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -389,9 +390,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox lbox2;
         private System.Windows.Forms.Button btnGetSurvey;
-        private System.Windows.Forms.DateTimePicker fromDate;
         private System.Windows.Forms.DateTimePicker toDate;
         private System.Windows.Forms.DataGridView survGrid;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -416,12 +415,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cpk1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Panel pnLogin;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbUser_id;
         private System.Windows.Forms.Label lbPassWord;
         private System.Windows.Forms.Label lbUser;
         private System.Windows.Forms.Button btnLogin;
+        protected System.Windows.Forms.ComboBox lbox2;
+        protected System.Windows.Forms.DateTimePicker fromDate;
+        protected System.Windows.Forms.Panel pnLogin;
     }
 }
 
