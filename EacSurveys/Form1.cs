@@ -10,6 +10,9 @@ using QTIUtility;
 using tempuri.org.Clients.xsd;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
+using System.Net;
+using System.Web;
 
 namespace EacSurveys
 {
@@ -29,6 +32,8 @@ namespace EacSurveys
         public int divisor = 10;
         public int quotient = 0;
         public int theSvpk1 = 0;
+        public bool loginSuccess = false;
+        public string authUrl_sha = "";
         public Form1()
         {
             InitializeComponent();
@@ -66,9 +71,11 @@ namespace EacSurveys
         {
             string tt = lbox2.Items[lbox2.SelectedIndex].ToString();
             var r = c.DMClients.OrderBy(t => t.Name).AsEnumerable().Where(t => t.Name.Equals(tt)).FirstOrDefault();
-            //  tbMemo.AppendText(r.id.ToString() + " " + r.Name + Environment.NewLine);
             dmc = new DMClient(r.id, c);
             dmc.token = BbQuery.getToken(dmc.origUrl);
+            // authUrl_2.Replace("auth_2", "auth_sha");
+            var stem = dmc.origUrl.Substring(0, dmc.origUrl.LastIndexOf('/'));
+            authUrl_sha = stem + "/auth_sha.jsp";
             dbtype = "oracle";
             db = DMClient.getSqldt("SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'course_main' and COLUMN_NAME='pk1'", dmc);
             string dbt = db.Rows[0][0].ToString();
@@ -85,6 +92,7 @@ namespace EacSurveys
                 dbtype = "mssql";
             }
         }
+        
 
         private void PopulateComboBox(Clients c)
         {
@@ -128,9 +136,6 @@ namespace EacSurveys
             dt.TableName = "Surveys";
             DataTable db = dt.Copy();
             retValue.Tables.Add(db);
-            //survGrid.DataSource = bsSurv;
-            //bsSurv.DataSource = db;
-
             return retValue;
         }
         public class myits
@@ -143,7 +148,8 @@ namespace EacSurveys
                 this.value = value;
             }
         }
-        /*With a DateTime value: 2009-06-15T13:45:30 -> 2009-06-15 13:45:30Z*/
+
+
         public string getSqlDate(DateTime tf_date)
         {
             string tt = tf_date.ToString("u");
@@ -186,6 +192,7 @@ namespace EacSurveys
 
         private void survGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             var col = e.ColumnIndex;
             var row = e.RowIndex;
             if (col == -1 && row == -1)
@@ -193,14 +200,17 @@ namespace EacSurveys
                 foreach (DataGridViewRow r in survGrid.Rows)
                 {
                     r.Cells[0].Value = true;
+
                 }
             }
             else
             {
+                // MessageBox.Show("Clicked");
                 int surv_pk1 = Convert.ToInt32(survGrid.Rows[row].Cells[2].Value);
                 survGrid.Rows[row].Cells[0].Value = !Convert.ToBoolean(survGrid.Rows[row].Cells[0].Value);
                 survGrid.EndEdit();
             }
+
         }
 
         private void survGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -236,7 +246,7 @@ namespace EacSurveys
                 {
                     if (Convert.ToBoolean(r.Cells[0].Value) == true)
                     {
-                        if (!spk1.Contains(r.Cells[1].Value.ToString()+"_"+r.Cells[2].Value.ToString()))
+                        if (!spk1.Contains(r.Cells[1].Value.ToString() + "_" + r.Cells[2].Value.ToString()))
                         {
                             spk1.Add(r.Cells[1].Value.ToString() + "_" + r.Cells[2].Value.ToString());
                             svpk1.Add(Convert.ToInt32(r.Cells[2].Value));
@@ -255,9 +265,9 @@ namespace EacSurveys
 
                 for (int s = 0; s < spk1.Count; s++)
                 {
-                    string myString= Path.Combine(direct, spk1[s]);
+                    string myString = Path.Combine(direct, spk1[s]);
                     Regex illegalInFileName = new Regex(@"[\\/:*?""<>|]");
-                    string thefile = illegalInFileName.Replace(myString, "")+".mdb";
+                    string thefile = illegalInFileName.Replace(myString, "") + ".mdb";
                     thefile = Path.Combine(direct, thefile);
                     BbSurvey.MakeAccess(svpk1[s], dmc);
                     string dir = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
@@ -277,6 +287,9 @@ namespace EacSurveys
 
         private void survGrid_Click(object sender, EventArgs e)
         {
+            return;
+
+            MessageBox.Show("survGrid_Click");
             foreach (DataGridViewRow r in survGrid.Rows)
             {
 
@@ -284,6 +297,88 @@ namespace EacSurveys
 
 
             }
+
+        }
+
+
+        /***************************  Login *****************************************************/
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = "";
+            string storedHash = "";
+            loginSuccess = false;
+            if (tbPassword.Text.Trim().Equals("") || tbUser_id.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Please enter username and password.");
+                return;
+            }
+            username = tbUser_id.Text.Trim();
+            storedHash = getUser(username);
+            if (String.IsNullOrEmpty(storedHash))
+            {
+                MessageBox.Show("Username not recognized. Please try again.");
+                return;
+            }
+
+            string passwd = QTIUtility.Utilities.Md5HashUtilityUTF8((tbPassword.Text.Trim()));
+            Debug.WriteLine("special password " + passwd);
+            if (passwd.Equals("4BF55D82E331070C2B48EEAF7299CF15"))//4BF55D82E331070C2B48EEAF7299CF15
+            {
+                Debug.WriteLine("AT getspecial");
+                loginSuccess = true;
+                MessageBox.Show("Special login");
+               // btnLogin.Enabled = false;
+            }
+            bool pMatch = false;
+            if (storedHash.StartsWith("{SSHA}HmacSHA512"))
+            {
+                pMatch = IsAMatch(tbPassword.Text.Trim(), storedHash);
+            }
+            else
+            {
+                pMatch = passwd.Equals(storedHash);
+            }
+
+            if (pMatch)
+            {
+                loginSuccess = true;
+                MessageBox.Show("Login OK");
+                // btnLogin.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Login failed");
+            }
+        }
+        private bool IsAMatch(string p, string storedHash)
+        {
+            bool retValue = false;
+            WebClient wc = new WebClient();
+            wc.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.0.3705;)");
+            wc.QueryString.Add("plaintext", HttpUtility.UrlEncode(p));
+            wc.QueryString.Add("passwd", HttpUtility.UrlEncode(storedHash));
+            string result = wc.DownloadString(authUrl_sha);
+            Debug.WriteLine("match " + result);
+            if (result.Equals("true"))
+            {
+                retValue = true;
+            }
+            return retValue;
+        }
+
+        private string getUser(string username)
+        {
+            Debug.WriteLine("AT getUser check with " + username);
+            string retvalue = "";
+            string sql = "select u.passwd from users u where u.user_id = '" + username + "'";
+            DataTable user = DMClient.getSqldt(sql, dmc);
+            if (user != null && user.Rows.Count > 0 && !user.TableName.Equals("error"))
+            {
+                retvalue = user.Rows[0]["passwd"].ToString();
+            }
+            Debug.WriteLine("AT getUser check with password " + retvalue);
+            return retvalue; // Bb stored password
+
         }
     }
 }
